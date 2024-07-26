@@ -23,7 +23,7 @@ const EditDish = () => {
 
   const onSubmit = async (apiDish: ApiDish) => {
     try {
-     await dispatch(updateDish({id, apiDish})).unwrap();
+      await dispatch(updateDish({id, apiDish})).unwrap();
       toast.success('Dish updated');
       navigate('/admin');
     } catch (error) {

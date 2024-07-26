@@ -19,10 +19,9 @@ const ClientDishes = () => {
     dispatch(fetchDishes());
   }, [dispatch]);
 
-const addToCart=(dish:Dish)=>{
-  dispatch(addDish(dish));
-  console.log(cartDishes);
-}
+  const addToCart = (dish: Dish) => {
+    dispatch(addDish(dish));
+  };
 
   const total = cartDishes.reduce((sum, cartDish) => {
     return sum + cartDish.amount * cartDish.dish.price;
@@ -39,15 +38,13 @@ const addToCart=(dish:Dish)=>{
               image={el.image}
               price={el.price}
               key={el.id}
-              addToCart={()=>addToCart(el)}
+              addToCart={() => addToCart(el)}
             />;
-
           })
-
       }
       <div className="border-top pt-3 mt-3 d-flex justify-content-between align-items-center">
-        <p className="m-0">Order total: <strong>{total}</strong></p>
-       <NavLink to={'/cart'} className="btn btn-light btn-outline-secondary">Order</NavLink>
+        <p className="m-0">Order price: <strong>{total}</strong></p>
+        <NavLink to={'/cart'} className="btn btn-light btn-outline-secondary">Submit your order</NavLink>
       </div>
 
     </>

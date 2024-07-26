@@ -6,15 +6,15 @@ import {Dish} from '../../types';
 const CartDishes = () => {
   const cartDishes = useAppSelector(selectCartDishes);
   const dispatch = useAppDispatch();
-  const removeThisDish = (dish:Dish)=>{
-    dispatch(removeDish(dish))
-  }
-  const increase = (dish:Dish)=>{
-    dispatch(increaseDish(dish))
-  }
-  const decrease = (dish:Dish)=>{
-    dispatch(decreaseDish(dish))
-  }
+  const removeThisDish = (dish: Dish) => {
+    dispatch(removeDish(dish));
+  };
+  const increase = (dish: Dish) => {
+    dispatch(increaseDish(dish));
+  };
+  const decrease = (dish: Dish) => {
+    dispatch(decreaseDish(dish));
+  };
 
   return (
     <>
@@ -23,9 +23,9 @@ const CartDishes = () => {
                          title={el.dish.title}
                          amount={el.amount}
                          price={el.dish.price}
-                         remove={()=>removeThisDish(el.dish)}
-                         increase={()=>increase(el.dish)}
-                         decrease={()=>decrease(el.dish)}
+                         remove={() => removeThisDish(el.dish)}
+                         increase={() => increase(el.dish)}
+                         decrease={() => decrease(el.dish)}
         />;
       })}
 

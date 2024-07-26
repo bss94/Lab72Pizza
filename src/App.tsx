@@ -6,7 +6,9 @@ import Home from './containers/Home/Home';
 import EditDish from './containers/EditDish/EditDish';
 import AddDish from './containers/AddDish/AddDish';
 import Dishes from './components/Dishes/Dishes';
-import Cart from './components/Cart/Cart';
+import Cart from './containers/Cart/Cart';
+import Checkout from './containers/Checkout/Checkout';
+
 
 const App = () => {
 
@@ -17,6 +19,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/cart" element={<Cart/>}/>
+          <Route path="/checkout" element={<Checkout/>}/>
 
 
           <Route path="/admin" element={<Admin/>}>
