@@ -52,6 +52,7 @@ const DishForm:React.FC<Props> = ({onSubmit,existingDish,sending}) => {
             <Form.Control
               type="text"
               name="title"
+              required
               value={dishMutation.title}
               onChange={changeDish}
             />
@@ -66,6 +67,7 @@ const DishForm:React.FC<Props> = ({onSubmit,existingDish,sending}) => {
             <Form.Control
               type="number"
               name="price"
+              required
               value={dishMutation.price}
               onChange={changeDish}
             />
@@ -78,7 +80,6 @@ const DishForm:React.FC<Props> = ({onSubmit,existingDish,sending}) => {
           </Col>
           <Col sm={8}>
             <Form.Control type="url"
-                          required
                           name="image"
                           value={dishMutation.image}
                           onChange={changeDish}
@@ -91,8 +92,8 @@ const DishForm:React.FC<Props> = ({onSubmit,existingDish,sending}) => {
                     isSending={sending}
                     className="text-white"
 
-        >Create
-        {/*>{!existingContact ? 'Create' : 'Edit'}*/}
+        >
+        {!existingDish ? 'Create' : 'Edit'}
       </SpinnerBtn>
       </Form>
     </div>

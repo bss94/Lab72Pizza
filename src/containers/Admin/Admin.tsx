@@ -1,27 +1,24 @@
-import {useAppDispatch, useAppSelector} from '../../app/hooks';
-import {selectDishes} from '../../store/dishesSlice';
+import {useAppDispatch} from '../../app/hooks';
+//import {selectDishes} from '../../store/dishesSlice';
 import {useEffect} from 'react';
 import {fetchDishes} from '../../store/dishesThunk';
-import AddDish from '../AddDish/AddDish';
+import {NavLink, Outlet} from 'react-router-dom';
 
 
 const Admin = () => {
   const dispatch = useAppDispatch();
-  const dishes = useAppSelector(selectDishes);
+ // const dishes = useAppSelector(selectDishes);
 
   useEffect(() => {
     dispatch(fetchDishes());
   }, [dispatch]);
   return (
-    <div>
-      <AddDish/>
-      {dishes.map(el=>{
-        return <div key={el.id}>
-          <h5>{el.title}</h5>
-          <p>{el.price}</p>
-        </div>
-      })}
-    </div>
+    <>
+      {/*asdad*/}
+     <NavLink to={'dishes'} className='nav-link btn btn-danger btn-secondary'>Dishes</NavLink>
+      {/*asdad*/}
+      <Outlet/>
+    </>
   );
 };
 

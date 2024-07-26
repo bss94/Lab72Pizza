@@ -5,8 +5,11 @@ const Toolbar = () => {
   return (
     <Navbar bg="warning" data-bs-theme="dark">
       <Container>
-        <NavLink className="navbar-brand" to="/">
-          Pizza PaPaS
+        <NavLink className="navbar-brand" to="/admin">
+          Pizza PaPaS to ADMIN
+        </NavLink>
+        <NavLink className="navbar-brand" to="/admin/dishes/add-dish">
+         addDish
         </NavLink>
       </Container>
     </Navbar>

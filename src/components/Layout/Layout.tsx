@@ -12,7 +12,7 @@ const Layout: React.FC<PropsWithChildren> = ({children}) => {
         <Container>
           <Row>
             <Col/>
-            <Col xs={12} sm={8}>
+            <Col xs={12} sm={12} md={10} lg={8}>
               {children}
             </Col>
             <Col/>
