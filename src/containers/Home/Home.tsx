@@ -1,11 +1,10 @@
-
-
+import ClientDishes from '../../components/ClientDishes/ClientDishes';
 
 const Home = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+    <ClientDishes/>
+    </>
   );
 };
 

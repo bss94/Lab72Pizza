@@ -11,6 +11,9 @@ const Toolbar = () => {
         <NavLink className="navbar-brand" to="/admin/dishes/add-dish">
          addDish
         </NavLink>
+        <NavLink className="nav-link" to="/">
+          home
+        </NavLink>
       </Container>
     </Navbar>
   );

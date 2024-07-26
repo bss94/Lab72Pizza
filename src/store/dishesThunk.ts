@@ -1,12 +1,12 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {ApiDish, ApiDishes, Dish} from '../types';
-import {AppDispatch} from '../app/store';
+import {AppDispatch, RootState} from '../app/store';
 import axiosApi from '../axiosApi';
 
 export const fetchDishes = createAsyncThunk<
   Dish[],
   undefined,
-  { dispatch: AppDispatch }
+  { state: RootState }
 >(
   'dishes/fetchDishes',
   async () => {
@@ -37,7 +37,7 @@ export const createDish = createAsyncThunk<void, ApiDish, { dispatch: AppDispatc
 export const deleteDish = createAsyncThunk<
   void,
   string,
-  { dispatch: AppDispatch }
+  { state: RootState }
 >(
   'dishes/deleteDish',
   async (dishId: string) => {
@@ -48,7 +48,7 @@ export const deleteDish = createAsyncThunk<
 export const fetchOneDish = createAsyncThunk<
   ApiDish,
   string,
-  { dispatch: AppDispatch }
+  { state: RootState }
 >(
   'dishes/fetchOneDish',
   async (id) => {
@@ -71,7 +71,7 @@ export interface UpdateArgs {
 export const updateDish = createAsyncThunk<
   void,
   UpdateArgs,
-  { dispatch: AppDispatch }
+  { state: RootState }
 >(
   'dishes/updateDish',
   async ({id, apiDish}) => {

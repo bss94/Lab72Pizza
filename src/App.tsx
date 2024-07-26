@@ -6,6 +6,7 @@ import Home from './containers/Home/Home';
 import EditDish from './containers/EditDish/EditDish';
 import AddDish from './containers/AddDish/AddDish';
 import Dishes from './components/Dishes/Dishes';
+import Cart from './components/Cart/Cart';
 
 const App = () => {
 
@@ -15,6 +16,9 @@ const App = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<Home/>}/>
+          <Route path="/cart" element={<Cart/>}/>
+
+
           <Route path="/admin" element={<Admin/>}>
             <Route path="dishes" element={<Dishes/>}/>
             {/*<Route path="/orders" element={'not found'}/>*/}

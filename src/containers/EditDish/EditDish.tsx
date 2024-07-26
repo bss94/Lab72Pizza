@@ -37,7 +37,7 @@ const EditDish = () => {
         loading && (
           <div
             className="d-flex align-items-center justify-content-center
-          bg-opacity-10 bg-black h-100 w-100 position-fixed">
+          bg-opacity-25 bg-black h-100 w-100 position-absolute">
             <Spinner/></div>
         )}
       {

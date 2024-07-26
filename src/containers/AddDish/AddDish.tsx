@@ -21,9 +21,9 @@ const AddDish = () => {
   };
 
   return (
-    <div>
+    <>
       <DishForm onSubmit={onSubmit} sending={loading}/>
-    </div>
+    </>
   );
 };
 

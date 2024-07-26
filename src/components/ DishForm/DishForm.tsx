@@ -42,7 +42,6 @@ const DishForm:React.FC<Props> = ({onSubmit,existingDish,sending}) => {
 
 
   return (
-    <div>
       <Form className="mt-5" onSubmit={onFormSubmit}>
         <Form.Group as={'div'} className="mb-3 row" controlId="name">
           <Col sm={4}>
@@ -96,7 +95,6 @@ const DishForm:React.FC<Props> = ({onSubmit,existingDish,sending}) => {
         {!existingDish ? 'Create' : 'Edit'}
       </SpinnerBtn>
       </Form>
-    </div>
   );
 };
 
