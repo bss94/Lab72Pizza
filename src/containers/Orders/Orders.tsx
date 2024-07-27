@@ -15,7 +15,9 @@ const Orders = () => {
   const completeLoading = useAppSelector(selectCompleteLoading);
 
   useEffect(() => {
-    dispatch(fetchOrders(dishes));
+    if (dishes.length !== 0) {
+      dispatch(fetchOrders(dishes));
+    }
   }, [dishes, dispatch]);
 
   const completeThisOrder = async (id: string) => {

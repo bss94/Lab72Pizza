@@ -1,8 +1,15 @@
 import {NavLink, Outlet} from 'react-router-dom';
+import {useAppDispatch} from '../../app/hooks';
+import {useEffect} from 'react';
+import {fetchDishes} from '../../store/dishesThunk';
 
 
 const Admin = () => {
+  const dispatch = useAppDispatch();
 
+  useEffect(() => {
+    dispatch(fetchDishes());
+  }, [dispatch]);
 
   return (
     <>

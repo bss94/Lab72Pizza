@@ -35,7 +35,6 @@ const OrderItem: React.FC<Props> = ({
               <Col className="text-start p-0">Delivery</Col>
               <Col className="text-start p-0 fw-bold">150 KGS</Col>
             </Row>
-
           </Card.Body>
         </Col>
         <Col xs={3} className="d-flex flex-column">
@@ -52,6 +51,9 @@ const OrderItem: React.FC<Props> = ({
           </SpinnerBtn>
         </Col>
       </Row>
+      <p className="m-0 p-1">Name: {order.customer.name}</p>
+      <p className="m-0 p-1">Phone: {order.customer.phone}</p>
+      <p className="m-0 p-1">Address: {order.customer.address}</p>
     </Card>
   );
 };
