@@ -5,7 +5,6 @@ import {completeOrder, fetchOrders} from '../../store/orderThunk';
 import {selectCompleteLoading, selectOrders, selectOrdersLoading} from '../../store/orderSlice';
 import OrderItem from '../../components/OrdersList/OrderItem';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
-import {fetchDishes} from '../../store/dishesThunk';
 import {toast} from 'react-toastify';
 
 const Orders = () => {
@@ -16,7 +15,6 @@ const Orders = () => {
   const completeLoading = useAppSelector(selectCompleteLoading);
 
   useEffect(() => {
-    dispatch(fetchDishes());
     dispatch(fetchOrders(dishes));
   }, [dishes, dispatch]);
 
