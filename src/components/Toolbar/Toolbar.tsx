@@ -5,15 +5,10 @@ const Toolbar = () => {
   return (
     <Navbar bg="warning" data-bs-theme="dark">
       <Container>
-        <NavLink className="navbar-brand" to="/admin">
-          Pizza PaPaS to ADMIN
+        <NavLink className="navbar-brand" to="/">
+          Pizza PaPaS
         </NavLink>
-        <NavLink className="navbar-brand" to="/admin/dishes/add-dish">
-         addDish
-        </NavLink>
-        <NavLink className="nav-link" to="/">
-          home
-        </NavLink>
+
       </Container>
     </Navbar>
   );

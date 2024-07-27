@@ -8,6 +8,7 @@ interface Props extends React.PropsWithChildren {
   variant?: 'success' | 'warning' | 'danger' | 'primary';
   className?: string;
   onClick?: VoidFunction;
+  disabled?: boolean;
 }
 
 const SpinnerBtn: React.FC<Props> = ({
@@ -16,13 +17,14 @@ const SpinnerBtn: React.FC<Props> = ({
   variant = 'primary',
   className,
   onClick,
+  disabled,
   children
 }) => {
   return (
     <Button variant={variant}
             type={type}
             className={className ? className : ''}
-            disabled={isSending}
+            disabled={isSending || disabled}
             onClick={onClick}
     >
       {isSending

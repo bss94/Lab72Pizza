@@ -7,7 +7,6 @@ interface Props {
   price: number;
 }
 
-
 const CheckoutItem: React.FC<Props> = ({
   title,
   amount,

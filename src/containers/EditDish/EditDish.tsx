@@ -6,7 +6,7 @@ import {fetchOneDish, updateDish} from '../../store/dishesThunk';
 import {toast} from 'react-toastify';
 import {useEffect} from 'react';
 import {selectFetchOneLoading, selectOneDish, selectUpdateLoading} from '../../store/dishesSlice';
-import {Spinner} from 'react-bootstrap';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 
 const EditDish = () => {
@@ -35,10 +35,7 @@ const EditDish = () => {
     <>
       {
         loading && (
-          <div
-            className="d-flex align-items-center justify-content-center
-          bg-opacity-25 bg-black h-100 w-100 position-absolute">
-            <Spinner/></div>
+          <LoadingSpinner/>
         )}
       {
         !loading && dish && (

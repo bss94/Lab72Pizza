@@ -5,7 +5,6 @@ interface Props extends React.PropsWithChildren {
   show: boolean;
   onClose: MouseEventHandler;
   onContinue: MouseEventHandler;
-
 }
 
 const OrderModal: React.FC<Props> = ({

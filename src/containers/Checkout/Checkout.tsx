@@ -127,6 +127,7 @@ const Checkout = () => {
         <SpinnerBtn type="submit"
                     variant="warning"
                     isSending={creating}
+                    disabled={customer.name === '' || customer.address === '' || customer.phone === ''}
                     className="text-white"
 
         >

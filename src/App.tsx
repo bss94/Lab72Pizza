@@ -8,6 +8,7 @@ import AddDish from './containers/AddDish/AddDish';
 import Dishes from './components/Dishes/Dishes';
 import Cart from './containers/Cart/Cart';
 import Checkout from './containers/Checkout/Checkout';
+import Orders from './containers/Orders/Orders';
 
 
 const App = () => {
@@ -20,11 +21,9 @@ const App = () => {
           <Route path="/" element={<Home/>}/>
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/checkout" element={<Checkout/>}/>
-
-
           <Route path="/admin" element={<Admin/>}>
             <Route path="dishes" element={<Dishes/>}/>
-            {/*<Route path="/orders" element={'not found'}/>*/}
+            <Route path="orders" element={<Orders/>}/>
           </Route>
           <Route path="/admin/dishes/:id/edit" element={<EditDish/>}/>
           <Route path="/admin/dishes/add-dish" element={<AddDish/>}/>

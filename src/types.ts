@@ -17,7 +17,6 @@ export interface DishMutation {
   price: string;
 }
 
-////////////////////
 export interface CartDish {
   dish: Dish;
   amount: number;
@@ -41,4 +40,27 @@ export interface OrderDishes {
 export interface ApiOrder {
   customer: Customer;
   dishes: OrderDishes;
+}
+
+export interface ApiOrders {
+  [id: string]: ApiOrder;
+}
+
+export interface Order {
+  id: string;
+  customer: Customer;
+  dishes: OrderDishes;
+}
+
+export interface OrderDish {
+  id: string;
+  title: string;
+  price: number;
+  amount: number;
+}
+
+export interface ReadOrder {
+  id: string;
+  customer: Customer;
+  dishes: OrderDish[];
 }

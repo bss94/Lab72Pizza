@@ -1,4 +1,4 @@
-import {Button, Spinner} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 import {useAppDispatch, useAppSelector} from '../../app/hooks';
 import {selectDeleteLoading, selectDishes, selectFetchAllLoading} from '../../store/dishesSlice';
 import DishItem from './DishItem';
@@ -7,6 +7,7 @@ import {deleteDish, fetchDishes} from '../../store/dishesThunk';
 import {toast} from 'react-toastify';
 import {useEffect} from 'react';
 import {NavLink} from 'react-router-dom';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 
 const Dishes = () => {
@@ -24,22 +25,17 @@ const Dishes = () => {
       await dispatch(deleteDish(id));
       toast.success('Dish deleted successfully.');
     } catch (e) {
-      toast.error(`${e}`);
+      toast.error(`Deleting failed ${e}`);
     } finally {
       await dispatch(fetchDishes());
     }
-
   };
 
   return (
     <>
       {
         loadDishes ?
-          <div
-            className="d-flex align-items-center justify-content-center
-        bg-opacity-10 bg-black h-100 w-100 position-absolute">
-            <Spinner/>
-          </div>
+          <LoadingSpinner/>
           :
           dishes.map(el => {
             return <DishItem
